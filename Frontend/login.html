@@ -6,8 +6,12 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial;
-            background-color: #f2f2f2;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         header {
@@ -16,51 +20,96 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         header h2 {
             color: white;
             margin: 0;
+            font-weight: 600;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #dcdcdc;
         }
 
         .login-box {
-            width: 350px;
-            margin: 70px auto;
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
+            width: 380px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
         .login-box h2 {
             text-align: center;
             color: #0b3d91;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
         }
 
         input, select {
             width: 100%;
-            padding: 10px;
-            margin: 8px 0 15px;
+            padding: 12px;
+            margin: 8px 0 18px;
             box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: #0b3d91;
         }
 
         button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background-color: #0b3d91;
             color: white;
             border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #082a6c;
+        }
+
+        .login-box p {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 15px;
+            color: #666;
         }
 
         a {
             color: #0b3d91;
             text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -68,7 +117,6 @@
             color: white;
             text-align: center;
             padding: 15px;
-            margin-top: 50px;
         }
     </style>
 </head>
@@ -77,20 +125,16 @@
 
     <header>
         <h2>RoadFix AI</h2>
-
         <nav>
             <a href="index.html">Home</a>
             <a href="register.html">Register</a>
         </nav>
     </header>
 
-
     <div class="login-box">
-
-        <h2>Login</h2>
+        <h2>Welcome Back</h2>
 
         <form onsubmit="loginUser(event)">
-
             <label>Email</label>
             <input type="email" id="email" placeholder="Enter Email" required>
 
@@ -106,25 +150,15 @@
             </select>
 
             <button type="submit">Login</button>
-
         </form>
 
-        <p>
-            Don't have an account?
-            <a href="register.html">Register</a>
-        </p>
-
-        <p>
-            <a href="index.html">Back to Home</a>
-        </p>
-
+        <p>Don't have an account? <a href="register.html">Register</a></p>
+        <p><a href="index.html">Back to Home</a></p>
     </div>
-
 
     <footer>
         <p>© 2026 RoadFix AI | Civic Issue Reporting & Tracking Platform</p>
     </footer>
-
 
     <script>
         function loginUser(event) {
